@@ -20,7 +20,7 @@ Este proyecto está construido con **Astro** y utiliza **Tailwind CSS** para los
    ```bash
    git clone <https://github.com/bvazquezj/OnlyChefs-Front>
    cd <FrontOnlyChefs>
-    ```bash
+    ```
 2. Instala las dependencias:
     ```bash
     npm install
