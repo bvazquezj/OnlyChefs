@@ -1,0 +1,311 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import NavbarMain from "../components/NavbarMain.jsx";
+import Image from "astro/components/Image.astro";
+import "../styles.css";
+
+
+const conversations = [
+    {
+        userPicture: "https://unavatar.io/github/bvazquezj",
+        name: "Brandon Vazquez",
+        userName: "@bvazquez",
+        title: "Curso de Reposteria tradicional",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+        date: "20 de diciembre",
+        hour: "12:00",
+    },{
+        userPicture: "https://unavatar.io/github/bvazquezj",
+        name: "Brandon Vazquez",
+        userName: "@bvazquez",
+        title: "Curso de Reposteria tradicional",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+        date: "20 de diciembre",
+        hour: "12:00",
+    },{
+        userPicture: "https://unavatar.io/github/bvazquezj",
+        name: "Brandon Vazquez",
+        userName: "@bvazquez",
+        title: "Curso de Reposteria tradicional",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+        date: "20 de diciembre",
+        hour: "12:00",
+    },{
+        userPicture: "https://unavatar.io/github/bvazquezj",
+        name: "Brandon Vazquez",
+        userName: "@bvazquez",
+        title: "Curso de Reposteria tradicional",
+        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+        date: "20 de diciembre",
+        hour: "12:00",
+    }
+    ]
+
+    const media = [
+        {
+            image: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title: "Recetas",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title: "Cursos",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title: "Chefs",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title: "Ingredientes",
+        },
+    ]
+---
+
+<Layout title="OnlyChefs - Comunidad">
+    <NavbarMain client:load />
+    <main>
+        <section class="relative bg-white overflow-hidden">
+            <div class="flex justify-center p-9">
+                
+                <!-- Componente Media (15% del ancho) -->
+                <div class="w-1/6 p-2 flex flex-col items-left">
+                    <h2 class="text-xl font-semibold mb-4">Media</h2>
+                    <div class="relative space-y-4">
+                        {media.map((media) => (
+                            <div class="relative group">
+                                {/* Imagen con efecto de oscurecimiento */}
+                                <Image 
+                                    src={media.image}
+                                    alt="Media Image type"
+                                    width="100"
+                                    height="100"
+                                    class="w-full h-20 object-cover rounded-lg transition-all duration-300 group-hover:opacity-50"
+                                />
+                                {/* Texto que aparece en hover */}
+                                <div class="absolute inset-0 bg-black rounded-lg bg-opacity-80 text-white flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
+                                    <span>{media.title}</span> {/* Aquí puedes poner el texto que quieres mostrar */}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+
+                <!-- Componente Perfil (60% del ancho) -->
+                <div
+                    class="max-h-screen bg-white rounded-lg shadow-lg overflow-scroll scrollbar-hide p-5"
+                >
+                <h2 class="text-lime-950 text-2xl font-semibold ml-6 mb-6">¿Que estas pensando?</h2>
+                    <!-- Aquí irán las publicaciones -->
+                    <!-- Feed debajo de las opciones del perfil -->
+                    <div
+                        class="mt-8 p-5 bg-gray-50 border border-gray-200 rounded-lg"
+                    >
+                        <!-- Campo para crear una nueva publicación -->
+                        <div
+                            class="mb-4 p-5 bg-white border border-gray-200 rounded-lg shadow-sm"
+                        >
+                            <input
+                                type="text"
+                                placeholder="Titulo de publicacion"
+                                class="w-full p-3 mb-3 border border-gray-300 rounded-md focus:outline-none focus:border-lime-500"
+                            />
+                            <textarea
+                                placeholder="¿Qué estás pensando?"
+                                class="resize-none w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-lime-500"
+                                rows="4"></textarea>
+                            <!-- Iconos de foto, video y encuesta -->
+                            <div class="flex justify-around mt-3 text-gray-500">
+                                <button
+                                    class="flex items-center space-x-2 hover:text-lime-500"
+                                >
+                                <svg xmlns="http://www.w3.org/2000/svg" x-bind:width="size" x-bind:height="size" viewBox="0 0 24 24" fill="none" stroke="currentColor" x-bind:stroke-width="stroke" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                                    <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path>
+                                    <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                  </svg>
+                                    <span>Foto</span>
+                                </button>
+                                <button
+                                    class="flex items-center space-x-2 hover:text-lime-500"
+                                >
+                                <svg xmlns="http://www.w3.org/2000/svg" x-bind:width="size" x-bind:height="size" viewBox="0 0 24 24" fill="none" stroke="currentColor" x-bind:stroke-width="stroke" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                                    <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z"></path>
+                                    <path d="M3 6m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
+                                  </svg>
+                                    <span>Video</span>
+                                </button>
+                                <button
+                                    class="flex items-center space-x-2 hover:text-lime-500"
+                                >
+                                <svg xmlns="http://www.w3.org/2000/svg" x-bind:width="size" x-bind:height="size" viewBox="0 0 24 24" fill="none" stroke="currentColor" x-bind:stroke-width="stroke" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                                    <path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                                    <path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                                    <path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+                                    <path d="M4 20h14"></path>
+                                  </svg>
+                                    <span>Encuesta</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        {conversations.map((thread) => (
+                            <div
+                            class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm mb-4"
+                        >
+                            <!-- Fila 1: Información del usuario -->
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <Image 
+                                        src={thread.userPicture}
+                                        alt="Foto de perfil del usuario"
+                                        width="50"
+                                        height="50"
+                                        class="rounded-full border-4 border-white"
+                                    />
+                                    <div>
+                                        <h3 class="text-lg font-semibold">
+                                            {thread.name}
+                                        </h3>
+                                        <p class="text-gray-500 text-sm">
+                                            {thread.userName}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    <p>{thread.date} • {thread.hour}</p>
+                                </div>
+                            </div>
+
+                            <!-- Fila 2: Título de la publicación -->
+                            <h4 class="mt-4 text-xl font-bold">
+                                {thread.title}
+                            </h4>
+
+                            <!-- Fila 3: Contenido de la publicación -->
+                            <p class="mt-2 text-gray-700">
+                                {thread.message}
+                            </p>
+
+                            <!-- Fila 4: Iconos de interacción -->
+                            <div class="flex justify-around mt-4 text-gray-500">
+                                <!-- Like -->
+                                <button
+                                    class="flex items-center space-x-1 hover:text-lime-500"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M14 9l-1-2m-1-2-1-1a3 3 0 00-5 0l-2 2a5 5 0 000 7l9 9a5 5 0 007 0l2-2a3 3 0 000-5l-9-9zm2 4h2a3 3 0 013 3v3a3 3 0 01-3 3h-3"
+                                        ></path>
+                                    </svg>
+                                    <span>Like</span>
+                                </button>
+
+                                <!-- Comentario -->
+                                <button
+                                    class="flex items-center space-x-1 hover:text-lime-500"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 8h2a2 2 0 012 2v7a2 2 0 01-2 2h-6l-4 4v-4H7a2 2 0 01-2-2V6a2 2 0 012-2h5a2 2 0 012 2v2"
+                                        ></path>
+                                    </svg>
+                                    <span>Comentario</span>
+                                </button>
+
+                                <!-- Favorito -->
+                                <button
+                                    class="flex items-center space-x-1 hover:text-lime-500"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 15a3 3 0 013-3h2a3 3 0 013 3v7a3 3 0 01-3 3H8a3 3 0 01-3-3v-7zm14-7a3 3 0 01-3-3v-2a3 3 0 00-6 0v2a3 3 0 01-3 3H4a3 3 0 00-3 3v4a3 3 0 003 3h1m10 0h7a3 3 0 003-3v-4a3 3 0 00-3-3h-7"
+                                        ></path>
+                                    </svg>
+                                    <span>Favorito</span>
+                                </button>
+
+                                <!-- Compartir -->
+                                <button
+                                    class="flex items-center space-x-1 hover:text-lime-500"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M19 15l-4-4m0 0l4-4m-4 4H9m7 4H7a4 4 0 00-4 4v1m4-5l4-4m-4 4L5 9"
+                                        ></path>
+                                    </svg>
+                                    <span>Compartir</span>
+                                </button>
+                            </div>
+                        </div>
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Componente Suggestions -->
+                <div class="w-1/6 p-2 flex flex-col items-left">
+                    <h2 class="text-xl font-semibold mb-4">Sugerencias</h2>
+                    <div class="space-y-4">
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-20 object-cover rounded-lg"
+                            alt="Imagen 1"
+                        />
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-20 object-cover rounded-lg"
+                            alt="Imagen 2"
+                        />
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-20 object-cover rounded-lg"
+                            alt="Imagen 3"
+                        />
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
+                            class="w-full h-20 object-cover rounded-lg"
+                            alt="Imagen 4"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <Footer />
+    </main>
+</Layout>

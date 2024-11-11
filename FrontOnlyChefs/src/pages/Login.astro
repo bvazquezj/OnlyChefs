@@ -1,13 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import NavbarMain from '../components/NavbarMain';
 ---
 
 <Layout title="OnlyChefs - Iniciar">
+	<NavbarMain client:load/>
 	<section class="bg-gray-50">
-		<div class="flex h-screen">
+		<div class="flex h-[90vh]">
 		  <!-- Columna 1 -->
-		  <div class="w-1/2 flex flex-col justify-center items-center" style="background-color:#ADE379" >
+		  <div class="w-1/2 flex flex-col justify-center items-center bg-lime-200" >
 			<!-- Logo del proyecto -->
 			<img src="logo.png" alt="Logo del Proyecto" class="mb-20 mx-20"/>
 	  
@@ -29,7 +31,7 @@ import Footer from '../components/Footer.astro';
 			<input type="password" placeholder="Contraseña" class="bg-gray-200 border border-gray-300 rounded-md p-2 mb-4 placeholder-gray-400" style="font-family:Roboto Serif" />
 	  
 			<!-- Fila 4: Botón de iniciar sesión -->
-			<button class="text-white rounded-md p-2 mb-4" style="background-color:#314320" onclick="window.location.href='/'">
+			<button class="text-white rounded-md p-2 mb-4 bg-lime-700" onclick="window.location.href='/'">
 			  Iniciar sesión
 		  </button>
 			<div class="flex flex-col items-center">

@@ -1,12 +1,148 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Footer from "../components/Footer.astro";
+import NavbarMain from "../components/NavbarMain";
 ---
 
 <Layout title="OnlyChefs - Home">
-	<main>
-		<h1>Hello World</h1>
-	</main>
-	
-</Layout>
+	<NavbarMain client:load />
+	<main class="flex items-center justify-center">
+		<div class=" w-2/3 bg-white rounded-lg shadow-lg overflow-hidden p-5">
+			<!-- Portada y Perfil -->
+			<div class="relative h-48 bg-lime-200">
+				<div
+					class="absolute bottom-0 left-10 transform translate-y-1/2 flex items-end"
+				>
+					<Image
+						src="https://unavatar.io/github/bvazquezj"
+						alt="Foto de perfil"
+						width="150"
+						height="150"
+						class="rounded-full border-4 border-white"
+					/>
+					<div class="ml-4">
+						<h2 class="text-2xl font-semibold">
+							Onlychefs Official
+						</h2>
+						<p class="text-gray-500">@onlychefs</p>
+						<div class="flex items-center space-x-6 mt-2">
+							<p class="text-sm font-medium">
+								Seguidores: <span class="font-bold">12.3k</span>
+							</p>
+							<p class="text-sm font-medium">
+								Seguidos: <span class="font-bold">356</span>
+							</p>
+							<button
+								class="ml-4 py-2 px-4 bg-lime-500 text-gray-100 font-bold rounded-full hover:bg-gray-200 hover:text-lime-500 transition"
+								>Editar perfil</button
+							>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<!-- Botones de opciones -->
+			<div
+				class="mt-20 flex justify-around border-t border-gray-200 pt-4"
+			>
+				<button
+					class="py-2 px-4 text-gray-700 font-semibold hover:text-blue-500"
+					>Mis publicaciones</button
+				>
+				<button
+					class="py-2 px-4 text-gray-700 font-semibold hover:text-blue-500"
+					>Mis cursos</button
+				>
+				<button
+					class="py-2 px-4 text-gray-700 font-semibold hover:text-blue-500"
+					>Mis recetas</button
+				>
+				<button
+					class="py-2 px-4 text-gray-700 font-semibold hover:text-blue-500"
+					>Mis likes</button
+				>
+			</div>
+
+			<!-- Aquí irán las publicaciones -->
+			<!-- Feed debajo de las opciones del perfil -->
+			<div class="mt-8 p-5 bg-gray-50 border border-gray-200 rounded-lg">
+				<!-- Campo para crear una nueva publicación -->
+				<div
+					class="mb-4 p-5 bg-white border border-gray-200 rounded-lg shadow-sm"
+				>
+					<input
+						type="text"
+						placeholder="Titulo de publicacion"
+						class="w-full p-3 mb-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+					/>
+					<textarea
+						placeholder="¿Qué estás pensando?"
+						class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+						rows="4"></textarea>
+					<!-- Iconos de foto, video y encuesta -->
+					<div class="flex justify-around mt-3 text-gray-500">
+						<button
+							class="flex items-center space-x-2 hover:text-blue-500"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 10l4.553-4.553a1.5 1.5 0 012.12 2.122L16.5 12l5.173 5.172a1.5 1.5 0 01-2.122 2.12L15 14.001m-6 0L4.707 18.707a1 1 0 01-1.414-1.414L8.586 12 3.293 6.707a1 1 0 011.414-1.414L9 9.999m6 0l4.707-4.707a1 1 0 011.414 1.414L15 10z"
+								></path>
+							</svg>
+							<span>Foto</span>
+						</button>
+						<button
+							class="flex items-center space-x-2 hover:text-blue-500"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 10l4.553-4.553a1.5 1.5 0 012.12 2.122L16.5 12l5.173 5.172a1.5 1.5 0 01-2.122 2.12L15 14.001m-6 0L4.707 18.707a1 1 0 01-1.414-1.414L8.586 12 3.293 6.707a1 1 0 011.414-1.414L9 9.999m6 0l4.707-4.707a1 1 0 011.414 1.414L15 10z"
+								></path>
+							</svg>
+							<span>Video</span>
+						</button>
+						<button
+							class="flex items-center space-x-2 hover:text-blue-500"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M15 10l4.553-4.553a1.5 1.5 0 012.12 2.122L16.5 12l5.173 5.172a1.5 1.5 0 01-2.122 2.12L15 14.001m-6 0L4.707 18.707a1 1 0 01-1.414-1.414L8.586 12 3.293 6.707a1 1 0 011.414-1.414L9 9.999m6 0l4.707-4.707a1 1 0 011.414 1.414L15 10z"
+								></path>
+							</svg>
+							<span>Encuesta</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<Footer />
+</Layout>

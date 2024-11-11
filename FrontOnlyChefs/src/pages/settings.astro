@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavbarMain from '../components/NavbarMain.jsx';
+import Footer from '../components/Footer.astro';
+
+---
+
+<Layout title="OnlyChefs - Configuracion">
+	<NavbarMain client:load />
+	<main>
+		<section class="flex bg-white">
+			<!-- Columna izquierda (30% de ancho) -->
+			<div class="w-1/3 p-6 bg-gray-100">
+				<!-- Barra de búsqueda -->
+				<div class="mb-6">
+					<input
+						type="text"
+						class="w-full p-3 rounded-lg border border-gray-300"
+						placeholder="Buscar configuración..."
+					/>
+				</div>
+
+				<!-- Opciones de configuración -->
+				<div class="space-y-4">
+					<!-- Configuración de cuenta -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Config. de la cuenta
+					</button>
+
+					<!-- Pagos -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Pagos
+					</button>
+
+					<!-- Seguridad -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Seguridad
+					</button>
+
+					<!-- Privacidad -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Privacidad
+					</button>
+
+					<!-- Notificaciones -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Notificaciones
+					</button>
+
+					<!-- Accesibilidad -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Accesibilidad
+					</button>
+
+					<!-- Soporte y ayuda -->
+					<button
+						class="w-full text-left py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium"
+					>
+						Soporte y ayuda
+					</button>
+				</div>
+			</div>
+
+			<!-- Columna derecha (70% de ancho) - Para el contenido de configuración -->
+			<section class="w-full p-6">
+				<!-- Primer rectángulo: Información de cuenta -->
+				<div class="bg-gray-200 rounded-lg p-6 mb-6">
+				  <div class="space-y-4">
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Info de cuenta</a>
+					<p class="text-sm text-gray-600">Revisa la información relacionada con tu cuenta.</p>
+					
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Datos de la cuenta</a>
+					<p class="text-sm text-gray-600">Actualiza tus datos personales y preferencias.</p>
+			  
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Desactivar cuenta</a>
+					<p class="text-sm text-gray-600">¿Necesitas un descanso? Averigua cómo desactivar tu cuenta.</p>
+				  </div>
+				</div>
+			  
+				<!-- Segundo rectángulo: Métodos de pago -->
+				<div class="bg-gray-200 rounded-lg p-6 mb-6">
+				  <div class="space-y-4">
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Métodos de pago</a>
+					<p class="text-sm text-gray-600">Consulta y agrega tus métodos de pago disponibles.</p>
+			  
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Facturación</a>
+					<p class="text-sm text-gray-600">Revisa tu historial de facturación.</p>
+			  
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Añadir métodos de pago</a>
+					<p class="text-sm text-gray-600">Agrega nuevos métodos de pago para futuras compras.</p>
+				  </div>
+				</div>
+			  
+				<!-- Tercer rectángulo: Seguridad -->
+				<div class="bg-gray-200 rounded-lg p-6">
+				  <div class="space-y-4">
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Seguridad</a>
+					<p class="text-sm text-gray-600">Consulta tus opciones de seguridad para mantener tu cuenta protegida.</p>
+			  
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Cambiar contraseña</a>
+					<p class="text-sm text-gray-600">Cambia tu contraseña si sospechas de actividad no autorizada.</p>
+			  
+					<a href="#" class="text-xl font-semibold text-blue-600 hover:underline">Autenticación de dos pasos</a>
+					<p class="text-sm text-gray-600">Asegura tu cuenta añadiendo una capa extra de seguridad.</p>
+				  </div>
+				</div>
+			  </section>	  
+		</section>
+	</main>
+	<Footer />
+</Layout>

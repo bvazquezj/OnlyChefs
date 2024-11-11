@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
-import NavbarMain from "../components/NavbarMain.astro";
+import NavbarMain from "../components/NavbarMain.jsx";
 import CursoCard from "../components/CursoCard.astro";
 import Curses from "../data/dataCurses.js";
 
@@ -9,7 +9,7 @@ const isAuthenticated = true; // Cambia a false para simular no autenticación
 ---
 
 <Layout title="OnlyChefs - Landing page">
-  <NavbarMain />
+  <NavbarMain client:load />
   {
     isAuthenticated ? (
       <>

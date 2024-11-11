@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-import NavbarMain from '../components/NavbarMain.astro';
+import NavbarMain from '../components/NavbarMain.jsx';
 import Filter from '../components/Filter.astro';
 import CursoCard from '../components/CursoCard.astro';
 import allCursos from '../data/allCurseData.js'
 ---
 
 <Layout title="OnlyChefs - Cursos">
-	<NavbarMain />
+	<NavbarMain client:load/>
   <main>
     <Filter />
     <!-- Featured Courses -->
