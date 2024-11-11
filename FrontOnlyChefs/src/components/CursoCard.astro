@@ -1,0 +1,40 @@
+---
+
+const {image, title, author, rating, reviews, price} = Astro.props;
+---
+
+<div class="bg-white shadow rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-all">
+    <img
+        src={image}
+        alt={title}
+        class="w-full h-48 object-cover"
+    />
+    <div class="p-4">
+        <h3 class="text-lg font-semibold">
+            {title}
+        </h3>
+        <p class="text-sm text-gray-500 mb-2">
+            {author}
+        </p>
+        <div class="flex items-center mb-2">
+            <!-- SVG Icon for Star -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-yellow-400 w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+            >
+                <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                ></path>
+            </svg>
+            <span class="ml-1 text-yellow-600">{rating}</span>
+            <span class="ml-2 text-gray-500"
+                >({reviews} opiniones)</span
+            >
+        </div>
+        <p class="text-lg font-semibold text-gray-900">
+            {price}
+        </p>
+    </div>
+</div>

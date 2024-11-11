@@ -1,27 +1,106 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import About from '../components/About.astro';
-import Pricing from '../components/Pricing.astro';
-import References from '../components/References.astro';
-import Clients from '../components/Clients.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import NavbarMain from "../components/NavbarMain.astro";
+import CursoCard from "../components/CursoCard.astro";
+import RecipeCard from "../components/RecipeCard.astro";
+import Cursos from "../data/dataCurses.js"
+import Recipes from "../data/dataRecipe.js"
 ---
 
 <Layout title="OnlyChefs - Home">
-	<Navbar />
-  <main>
-    <Hero />
-    <Features />
-    <About />
-    <Pricing />
-    <References />
-    <Clients />
-    <CallToAction />
-  </main>
-  <Footer />
-</Layout>
+	<!-- Navbar -->
+	<NavbarMain />
 
+	<!-- Hero Section -->
+	<section class="bg-lime-500 text-zinc-900 py-16">
+		<div class="container mx-auto px-4 text-center">
+			<h1 class="text-4xl md:text-5xl font-bold mb-4">
+				Encuentra tu próximo curso de cocina
+			</h1>
+			<p class="mb-6 text-lg">
+				Mejora tus habilidades con los mejores chefs y aprende nuevas
+				recetas.
+			</p>
+			<a
+				href="#"
+				class="bg-white text-zinc-900 font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition"
+				>Explora los cursos</a
+			>
+		</div>
+	</section>
+
+	<!-- Featured Courses -->
+	<section class="py-12">
+		<div class="container mx-auto mt-9 px-4 ">
+			<h2 class="text-2xl font-semibold mb-6">Cursos populares</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Curso Card -->
+				{Cursos.map((curso) => (
+					<CursoCard
+						image={curso.image}
+						title={curso.title}
+						author={curso.author}
+						rating={curso.rating}
+						reviews={curso.reviews}
+						price={curso.price}
+					/>
+				))}
+			</div>
+		</div>
+
+		<div class="container mx-auto my-9 px-4">
+			<h2 class="text-2xl font-semibold mb-6">Recetas populares</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Curso Card -->
+				{Recipes.map((curso) => (
+					<RecipeCard
+						image={curso.image}
+						title={curso.title}
+						author={curso.author}
+						rating={curso.rating}
+						reviews={curso.reviews}
+						price={curso.price}
+					/>
+				))}
+			</div>
+		</div>
+
+		<div class="container mx-auto my-9 px-4">
+			<h2 class="text-2xl font-semibold mb-6">Cursos Recomendados</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Curso Card -->
+				{Cursos.map((curso) => (
+					<CursoCard
+						image={curso.image}
+						title={curso.title}
+						author={curso.author}
+						rating={curso.rating}
+						reviews={curso.reviews}
+						price={curso.price}
+					/>
+				))}
+			</div>
+		</div>
+
+		<div class="container mx-auto my-9 px-4">
+			<h2 class="text-2xl font-semibold mb-6">Recetas Recomendadas</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Curso Card -->
+				{Recipes.map((curso) => (	
+					<RecipeCard
+						image={curso.image}
+						title={curso.title}
+						author={curso.author}
+						rating={curso.rating}
+						reviews={curso.reviews}
+						price={curso.price}
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<Footer />
+</Layout>

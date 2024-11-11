@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import NavbarMain from '../components/NavbarMain.astro';
+import Filter from '../components/Filter.astro';
+import RecipeCard from '../components/RecipeCard.astro';
+import allRecipes from '../data/allRecipeData.js'
+---
+
+<Layout title="OnlyChefs - Recetas">
+	<NavbarMain />
+  <main>
+    <Filter />
+    <!-- Featured Recipes -->
+	<section class="py-12">
+		<div class="container mx-auto mt-9 px-4 ">
+			<h2 class="text-2xl font-semibold mb-6">Todos los cursos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Recipe Card -->
+				{allRecipes.map((recipe) => (
+					<RecipeCard
+						image={recipe.image}
+						title={recipe.title}
+						author={recipe.author}
+						rating={recipe.rating}
+						reviews={recipe.reviews}
+						price={recipe.price}
+					/>
+				))}
+			</div>
+		</div>
+
+    <div class="container flex items-center justify-center mx-auto my-9 px-4">
+      <button class="bg-lime-500 text-zinc-900 font-semibold px-8 py-4 rounded-full hover:bg-gray-200 transition">Ver más</button>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</Layout>

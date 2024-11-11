@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import NavbarMain from '../components/NavbarMain.astro';
+import Filter from '../components/Filter.astro';
+import CursoCard from '../components/CursoCard.astro';
+import allCursos from '../data/allCurseData.js'
+---
+
+<Layout title="OnlyChefs - Cursos">
+	<NavbarMain />
+  <main>
+    <Filter />
+    <!-- Featured Courses -->
+	<section class="py-12">
+		<div class="container mx-auto mt-9 px-4 ">
+			<h2 class="text-2xl font-semibold mb-6">Todos los cursos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				<!-- Curso Card -->
+				{allCursos.map((curso) => (
+					<CursoCard
+						image={curso.image}
+						title={curso.title}
+						author={curso.author}
+						rating={curso.rating}
+						reviews={curso.reviews}
+						price={curso.price}
+					/>
+				))}
+			</div>
+		</div>
+
+    <div class="container flex items-center justify-center mx-auto my-9 px-4">
+      <button class="bg-lime-500 text-zinc-900 font-semibold px-8 py-4 rounded-full hover:bg-gray-200 transition">Ver más</button>
+    </div>
+  </section>
+
+  </main>
+  <Footer />
+</Layout>
+
