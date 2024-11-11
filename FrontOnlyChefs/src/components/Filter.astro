@@ -3,50 +3,58 @@
 ---
 
 <section class="pt-10 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">¡Filtra tu búsqueda!</h2>
-        <p class="mt-4 text-lg text-gray-600">Refina tu búsqueda para encontrar el curso perfecto</p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        ¡Filtra tu búsqueda!
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Refina tu búsqueda para encontrar el curso perfecto
+      </p>
+    </div>
+    <div class="mt-8 flex justify-center space-x-4">
+      <!-- Tipo de Cocina Filter -->
+      <div class="flex flex-col">
+        <label for="tipo-cocina" class="text-gray-700 font-medium mb-2"
+          >Tipo de cocina</label
+        >
+        <select
+          id="tipo-cocina"
+          class="border rounded-md px-4 py-2 bg-white text-gray-700"
+        >
+          <option value="tradicional">Tradicional</option>
+          <option value="moderna">Moderna</option>
+        </select>
       </div>
-      <div class="mt-8 flex justify-center space-x-4">
-        
-        <!-- Tipo de Cocina Filter -->
-        <div class="flex flex-col">
-          <label for="tipo-cocina" class="text-gray-700 font-medium mb-2">Tipo de cocina</label>
-          <select id="tipo-cocina" class="border rounded-md px-4 py-2 bg-white text-gray-700">
-            <option value="tradicional">Tradicional</option>
-            <option value="moderna">Moderna</option>
-          </select>
-        </div>
-  
-        <!-- Especialidad Filter -->
-        <div class="flex flex-col">
-          <label for="especialidad" class="text-gray-700 font-medium mb-2">Especialidad</label>
-          <select id="especialidad" class="border rounded-md px-4 py-2 bg-white text-gray-700">
-            <option value="panaderia">Panadería</option>
-            <option value="pasteleria">Pastelería</option>
-          </select>
-        </div>
-  
-        <!-- Dificultad Filter -->
-        <div class="flex flex-col">
-          <label for="dificultad" class="text-gray-700 font-medium mb-2">Dificultad</label>
-          <select id="dificultad" class="border rounded-md px-4 py-2 bg-white text-gray-700">
-            <option value="facil">Fácil</option>
-            <option value="intermedia">Intermedia</option>
-            <option value="avanzada">Avanzada</option>
-          </select>
-        </div>
-  
-        <!-- Región Filter -->
-        <div class="flex flex-col">
-          <label for="region" class="text-gray-700 font-medium mb-2">Región</label>
-          <select id="region" class="border rounded-md px-4 py-2 bg-white text-gray-700">
-            <option value="americas">Américas</option>
-            <option value="europa">Europa</option>
-            <option value="asia">Asia</option>
-          </select>
-        </div>
+
+      <!-- Especialidad Filter -->
+      <div class="flex flex-col">
+        <label for="especialidad" class="text-gray-700 font-medium mb-2"
+          >Especialidad</label
+        >
+        <select
+          id="especialidad"
+          class="border rounded-md px-4 py-2 bg-white text-gray-700"
+        >
+          <option value="panaderia">Panadería</option>
+          <option value="pasteleria">Pastelería</option>
+        </select>
+      </div>
+
+      <!-- Dificultad Filter -->
+      <div class="flex flex-col">
+        <label for="dificultad" class="text-gray-700 font-medium mb-2"
+          >Dificultad</label
+        >
+        <select
+          id="dificultad"
+          class="border rounded-md px-4 py-2 bg-white text-gray-700"
+        >
+          <option value="facil">Fácil</option>
+          <option value="intermedia">Intermedia</option>
+          <option value="avanzada">Avanzada</option>
+        </select>
       </div>
     </div>
-  </section>
+  </div>
+</section>

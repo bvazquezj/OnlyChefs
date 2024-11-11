@@ -1,12 +1,95 @@
 ---
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="OnlyChefs - Home">
 	<main>
-		<h1>Hello World</h1>
-	</main>
-	
-</Layout>
+		<section class="bg-gray-50">
+			<div class="flex h-screen">
+				<!-- Columna 1 -->
+				<div
+					class="w-1/2 flex flex-col justify-center items-center"
+					style="background-color:#ADE379"
+				>
+					<!-- Logo del proyecto -->
+					<img
+						src="logo.png"
+						alt="Logo del Proyecto"
+						class="mb-20 mx-0"
+					/>
 
+					<!-- Texto centrado -->
+					<p
+						class="text-center text-lg mx-20"
+						style="font-family:Manrope; font-size:60px; line-height:1"
+					>
+						¡Estas a un paso de registrarte en el sitio número uno
+						de gastronomía en México!
+					</p>
+				</div>
+				<!-- Columna 2 -->
+				<div
+					class="w-1/2 flex flex-col justify-center p-8"
+					style="background-color:#FFFFFF"
+				>
+					<!-- Fila 1: Crear cuenta -->
+					<label
+						class="mb-5"
+						,
+						style="font-family:Manrope; font-size:50px"
+						>Crear cuenta</label
+					>
+					<!-- Fila 2: Textfield de nombre -->
+					<input
+						type="text"
+						placeholder="Nombre y apellido"
+						class="bg-gray-200 border border-black-100 rounded-md p-2 mb-5 placeholder-gray-400"
+						style="font-family:Roboto Serif"
+					/>
+					<!-- Fila 3: Iniciar sesión -->
+					<!-- Fila 4: Textfield de correo electrónico -->
+					<input
+						type="email"
+						placeholder="Correo Electrónico"
+						class="bg-gray-200 border border-black-100 rounded-md p-2 mb-5 placeholder-gray-400"
+						style="font-family:Roboto Serif"
+					/>
+					<!-- Fila 5: Escribe tu contraseña -->
+					<!-- Fila 6: Textfield contraseña -->
+					<input
+						type="password"
+						placeholder="Contraseña"
+						class="bg-gray-200 border border-black-100 rounded-md p-2 mb-5 placeholder-gray-400"
+						style="font-family:Roboto Serif"
+					/>
+					<!-- Fila 7: Confirmar -->
+					<!-- Fila 8: Textfield de correo electrónico -->
+					<input
+						type="password"
+						placeholder="Confirmar contraseña"
+						class="bg-gray-200 border border-black-100 rounded-md p-2 mb-5 placeholder-gray-400"
+						style="font-family:Roboto Serif"
+					/>
+					<!-- Fila 9: Botón de iniciar sesión -->
+					<button
+						class="text-white rounded-md p-2 mb-4"
+						style="background-color:#314320"
+						onclick="window.location.href='/'"
+					>
+						Registrarme
+					</button>
+					<!-- Fila 10: Botón de cancelar registro -->
+					<button
+						class="text-white rounded-md p-2 mb-4"
+						style="background-color:#8A8A8A"
+						onclick="window.location.href='/'"
+					>
+						Regresar
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

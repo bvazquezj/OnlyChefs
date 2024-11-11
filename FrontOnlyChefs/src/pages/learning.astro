@@ -1,27 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import About from '../components/About.astro';
-import Pricing from '../components/Pricing.astro';
-import References from '../components/References.astro';
-import Clients from '../components/Clients.astro';
-import CallToAction from '../components/CallToAction.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import NavbarMain from "../components/NavbarMain.astro";
+import CursoCard from "../components/CursoCard.astro";
+import Curses from "../data/dataCurses.js";
+
+const isAuthenticated = true; // Cambia a false para simular no autenticación
 ---
 
 <Layout title="OnlyChefs - Landing page">
-	<Navbar />
-  <main>
-    <Hero />
-    <Features />
-    <About />
-    <Pricing />
-    <References />
-    <Clients />
-    <CallToAction />
-  </main>
+  <NavbarMain />
+  {
+    isAuthenticated ? (
+      <>
+        <section class="py-8">
+          <div class="container mx-auto mt-9 px-4 ">
+          <h2 class="text-2xl font-semibold mb-6">En curso</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				  <!-- Recipe Card -->
+				  {Curses.map((curse) => (
+					  <CursoCard
+						  image={curse.image}
+						  title={curse.title}
+						  author={curse.author}
+						  rating={curse.rating}
+						  reviews={curse.reviews}
+						  price={curse.price}
+              progress={20}
+					  />
+				  ))}
+			    </div>
+          </div>
+        </section>
+
+        <section class="py-4">
+          <div class="container mx-auto mt-9 px-4 ">
+          <h2 class="text-2xl font-semibold mb-6">Recomendado</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+				  <!-- Recipe Card -->
+				  {Curses.map((curse) => (
+					  <CursoCard
+						  image={curse.image}
+						  title={curse.title}
+						  author={curse.author}
+						  rating={curse.rating}
+						  reviews={curse.reviews}
+						  price={curse.price}
+					  />
+				  ))}
+			    </div>
+          </div>
+        </section>
+      </>
+    ) : (
+      <meta http-equiv="refresh" content="0; url=/Login" />
+    )
+  }
   <Footer />
 </Layout>
-

@@ -1,6 +1,6 @@
 ---
 
-const {image, title, author, rating, reviews, price} = Astro.props;
+const {image, title, author, rating, reviews, price, progress} = Astro.props;
 ---
 
 <div class="bg-white shadow rounded-lg overflow-hidden cursor-pointer transform hover:scale-110 transition-all">
@@ -36,5 +36,13 @@ const {image, title, author, rating, reviews, price} = Astro.props;
         <p class="text-lg font-semibold text-gray-900">
             {price}
         </p>
+        {progress > 0 ? (
+            <div class="flex items-center mb-2">
+                <div class="flex flex-col">
+                    <div class="text-gray-500 text-sm">Progreso</div>
+                    <div class="text-gray-900 font-extrabold text-xl">{progress}%</div>
+                </div>
+            </div>
+        ) : null}
     </div>
 </div>
