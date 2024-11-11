@@ -60,6 +60,13 @@ const conversations = [
             title: "Ingredientes",
         },
     ]
+
+    const suggestions = [
+    { name: "Juan Pérez", username: "juanperez", profileImage: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "María Gómez", username: "mariagomez", profileImage: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "Carlos López", username: "carloslopez", profileImage: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+    { name: "Juan Pérez", username: "juanperez", profileImage: "https://images.unsplash.com/photo-1601000937859-3031d1be1caa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+];
 ---
 
 <Layout title="OnlyChefs - Comunidad">
@@ -279,29 +286,32 @@ const conversations = [
                 </div>
 
                 <!-- Componente Suggestions -->
-                <div class="w-1/6 p-2 flex flex-col items-left">
-                    <h2 class="text-xl font-semibold mb-4">Sugerencias</h2>
-                    <div class="space-y-4">
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
-                            class="w-full h-20 object-cover rounded-lg"
-                            alt="Imagen 1"
-                        />
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
-                            class="w-full h-20 object-cover rounded-lg"
-                            alt="Imagen 2"
-                        />
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
-                            class="w-full h-20 object-cover rounded-lg"
-                            alt="Imagen 3"
-                        />
-                        <img
-                            src="https://plus.unsplash.com/premium_photo-1671559021023-3da68c12aeed?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzYSVDMyVCMWF8ZW58MHx8MHx8fDA%3D"
-                            class="w-full h-20 object-cover rounded-lg"
-                            alt="Imagen 4"
-                        />
+                <div class="w-[30%] p-2 flex flex-col items-left">
+                    <div class="max-w-sm p-4 bg-white rounded-lg shadow-md">
+                        <h2 class="text-lg font-semibold mb-4">A quién seguir</h2>
+                        <div class="space-y-4">
+                            {/* Tarjeta de sugerencia de seguidor */}
+                            {suggestions.map((user) => (
+                                <div class="flex items-center justify-between">
+                                    {/* Perfil de usuario */}
+                                    <div class="flex items-center space-x-3 cursor-pointer">
+                                        <img
+                                            src={user.profileImage}
+                                            alt={`${user.name} profile`}
+                                            class="w-12 h-12 rounded-full object-cover"
+                                        />
+                                        <div>
+                                            <p class="font-semibold text-sm hover:underline">{user.name}</p>
+                                            <p class="text-gray-500 text-xs">@{user.username}</p>
+                                        </div>
+                                    </div>
+                                    {/* Botón de seguir */}
+                                    <button class="bg-lime-500 text-white text-sm px-4 py-1 rounded-full hover:bg-lime-600 transition duration-200">
+                                        Seguir
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
